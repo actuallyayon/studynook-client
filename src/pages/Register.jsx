@@ -52,26 +52,19 @@ const Register = () => {
 
     setSubmitting(true);
     try {
-      // Call registration API directly (do not set global user state)
-      const res = await axiosInstance.post('/api/auth/register', {
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-        photoURL: formData.photoURL,
-      });
+      const res = await register(
+        formData.name,
+        formData.email,
+        formData.password,
+        formData.photoURL
+      );
 
-      if (res.data.success) {
-        // Clear any auto-login cookies set by the server
-        try {
-          await axiosInstance.post('/api/auth/logout');
-        } catch (err) {
-          // Ignore logout error
-        }
-        toast.success('Registration successful! Please login.');
-        navigate('/login');
+      if (res.success) {
+        toast.success('Registration successful! Welcome to StudyNook.');
+        navigate('/', { replace: true });
       }
     } catch (error) {
-      toast.error(error.response?.data?.message || 'Registration failed');
+      toast.error(error.response?.data?.message || error.message || 'Registration failed');
     } finally {
       setSubmitting(false);
     }
