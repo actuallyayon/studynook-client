@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     const res = await axiosInstance.post('/api/auth/login', { email, password });
     if (res.data.success) {
+      localStorage.setItem('token', res.data.token);
       setUser(res.data.user);
     }
     return res.data;
@@ -49,6 +50,7 @@ export const AuthProvider = ({ children }) => {
       photoURL,
     });
     if (res.data.success) {
+      localStorage.setItem('token', res.data.token);
       setUser(res.data.user);
     }
     return res.data;
@@ -90,6 +92,7 @@ export const AuthProvider = ({ children }) => {
               });
 
               if (res.data.success) {
+                localStorage.setItem('token', res.data.token);
                 setUser(res.data.user);
                 resolve(res.data);
               } else {
@@ -109,6 +112,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await axiosInstance.post('/api/auth/logout');
+    localStorage.removeItem('token');
     setUser(null);
   };
 
