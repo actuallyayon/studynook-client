@@ -79,12 +79,12 @@ const Home = () => {
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
-              <span className="stat-number"><CountUp end={2000} suffix="+" duration={3500} /></span>
+              <span className="stat-number"><CountUp end={3000} suffix="+" duration={3500} /></span>
               <span className="stat-label">Happy Students</span>
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
-              <span className="stat-number"><CountUp end={10000} suffix="+" duration={4000} /></span>
+              <span className="stat-number"><CountUp end={5000} suffix="+" duration={4000} /></span>
               <span className="stat-label">Bookings Made</span>
             </div>
           </motion.div>
