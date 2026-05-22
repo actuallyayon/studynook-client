@@ -1,12 +1,12 @@
 # StudyNook – Library Study Room Booking
 
-🔗 **Live Site**: [https://studynook.vercel.app](https://studynook.vercel.app)
+Live Site: [https://studynook-client-pi.vercel.app](https://studynook-client-pi.vercel.app)
 
 StudyNook is a full-stack web application where students and library users can browse, search, filter, and book study rooms for specific dates and time slots.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Smart Booking System** – Book study rooms with real-time cost calculation, automatic time-conflict detection prevents double-booking using MongoDB's `$gte` and `$lte` operators.
 - **Secure JWT Authentication** – User sessions managed via HTTP-only cookies with JWT tokens. Supports email/password and Google OAuth sign-in for seamless access.
@@ -16,7 +16,7 @@ StudyNook is a full-stack web application where students and library users can b
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Layer | Stack |
 |-------|-------|
@@ -28,7 +28,7 @@ StudyNook is a full-stack web application where students and library users can b
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # Clone the repository
@@ -47,7 +47,7 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
