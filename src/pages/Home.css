@@ -171,13 +171,14 @@
   gap: var(--space-2xl);
   margin-top: var(--space-3xl);
   padding: var(--space-xl) var(--space-2xl);
-  background: var(--bg-glass);
+  background: rgba(5, 7, 12, 0.85);
   backdrop-filter: blur(16px);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: var(--radius-xl);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .stat-item {
@@ -198,14 +199,14 @@
 
 .stat-label {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #94A3B8; /* Always show as beautiful readable light silver-gray on dark card */
   margin-top: 0.2rem;
 }
 
 .stat-divider {
   width: 1px;
   height: 40px;
-  background: var(--border);
+  background: rgba(59, 130, 246, 0.2);
 }
 
 /* ===== SECTION CTA ===== */
