@@ -1,60 +1,124 @@
-# StudyNook – Library Study Room Booking
+# StudyNook - Library Study Room Booking
 
-Live Site: [https://studynook-client-pi.vercel.app](https://studynook-client-pi.vercel.app)
+StudyNook is a full-stack study room booking application for students and library users. Visitors can explore available rooms, search and filter by room details, view room information, and book a study space for a selected date and time. Authenticated users can also list and manage their own rooms.
 
-StudyNook is a full-stack web application where students and library users can browse, search, filter, and book study rooms for specific dates and time slots.
+## Live Project
 
----
+- Live site: [https://studynook-client-pi.vercel.app](https://studynook-client-pi.vercel.app)
+- Client repository: [https://github.com/actuallyayon/studynook-client](https://github.com/actuallyayon/studynook-client)
 
-## Key Features
+## Screenshot
 
-- **Smart Booking System** – Book study rooms with real-time cost calculation, automatic time-conflict detection prevents double-booking using MongoDB's `$gte` and `$lte` operators.
-- **Secure JWT Authentication** – User sessions managed via HTTP-only cookies with JWT tokens. Supports email/password and Google OAuth sign-in for seamless access.
-- **Advanced Search & Filtering** – Search rooms by name with instant results, filter by amenities (Whiteboard, Projector, Wi-Fi, etc.) using MongoDB `$regex` and `$in` operators.
-- **Room Management Dashboard** – Authenticated users can create, edit, and delete their own study room listings with ownership verification on every request.
-- **Premium Responsive Design** – Glassmorphism UI with dark/light theme toggle, Framer Motion animations, and fully responsive layout for mobile, tablet, and desktop.
-
----
+![StudyNook home page screenshot](public/studynook-screenshot.png)
 
 ## Technologies Used
 
-| Layer | Stack |
-|-------|-------|
-| Frontend | React 18, Vite, React Router v6, Framer Motion, Axios |
-| Backend | Node.js, Express.js, MongoDB (Mongoose) |
-| Auth | JWT (HTTP-only cookies), Firebase (Google OAuth) |
-| Styling | Vanilla CSS with CSS custom properties |
-| Deployment | Vercel (client), Render (server) |
+| Area | Technologies |
+| --- | --- |
+| Frontend | React, Vite, React Router |
+| Styling | CSS, CSS custom properties, responsive layouts |
+| Animation and UI | Framer Motion, React Icons, React Hot Toast |
+| API and Auth | Axios, Firebase Authentication, JWT-based backend sessions |
+| Backend | Node.js, Express.js, MongoDB, Mongoose |
+| Deployment | Vercel |
 
----
+## Core Features
 
-## Getting Started
+- Browse the latest study rooms from the home page.
+- Search, filter, and paginate available rooms.
+- View detailed room information including image, amenities, capacity, floor, hourly rate, and booking count.
+- Book a room by selecting date, start time, and end time with automatic total cost calculation.
+- Register and log in with email/password or Google authentication.
+- Add, edit, and delete owned study room listings.
+- Manage personal room listings and bookings from protected dashboard pages.
+- Responsive dark/light themed interface with smooth animations and toast feedback.
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/studynook-client.git
+## Dependencies
 
-# Install dependencies
-cd studynook-client
-npm install
+Main dependencies:
 
-# Set up environment variables
-cp .env.example .env
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `axios`
+- `firebase`
+- `framer-motion`
+- `react-hot-toast`
+- `react-icons`
 
-# Run the development server
-npm run dev
-```
+Development dependencies:
 
----
+- `vite`
+- `@vitejs/plugin-react`
+- `eslint`
+- `@eslint/js`
+- `eslint-plugin-react-hooks`
+- `eslint-plugin-react-refresh`
+- `globals`
+- `vercel`
 
-## Project Structure
+## Run Locally
 
-```
-src/
-├── components/   # Reusable UI components (Navbar, Footer, RoomCard, etc.)
-├── contexts/     # React Contexts (Auth, Theme)
-├── hooks/        # Custom hooks (Axios instance)
-├── layouts/      # Page layouts (MainLayout)
-├── pages/        # Route pages (Home, Rooms, Login, etc.)
-└── services/     # API service functions
-```
+Follow these steps to run the client project on your machine.
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/actuallyayon/studynook-client.git
+   ```
+
+2. Move into the project folder:
+
+   ```bash
+   cd studynook-client
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Create a local environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Update `.env` with your API URL and Firebase configuration:
+
+   ```env
+   VITE_API_URL=http://localhost:5000
+   VITE_FIREBASE_API_KEY=your_firebase_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+   ```
+
+6. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+7. Open the local URL shown in the terminal, usually:
+
+   ```text
+   http://localhost:5173
+   ```
+
+## Available Scripts
+
+- `npm run dev` - start the Vite development server.
+- `npm run build` - create a production build.
+- `npm run preview` - preview the production build locally.
+- `npm run lint` - run ESLint checks.
+
+## Relevant Resources
+
+- [React documentation](https://react.dev/)
+- [Vite documentation](https://vite.dev/)
+- [Firebase documentation](https://firebase.google.com/docs)
+- [Vercel documentation](https://vercel.com/docs)
